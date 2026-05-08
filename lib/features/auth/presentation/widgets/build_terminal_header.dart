@@ -30,3 +30,35 @@ Widget buildTerminalHeader(AppLocalizations l10n) {
       ],
     );
   }
+  // Widget buildTerminalHeader(AppLocalizations l10n) {
+  //   return Column(
+  //     children: [
+  //       const Icon(
+  //         Icons.person_add_rounded,
+  //         color: AppColors.magenta,
+  //         size: 64,
+  //       ),
+  //       const SizedBox(height: 16),
+  //       Text(
+  //         "NEW_USER_REGISTRY",
+  //         style: TextStyle(
+  //           fontFamily: 'monospace',
+  //           color: AppColors.magenta.withValues(alpha: 0.5),
+  //           fontSize: 10,
+  //           letterSpacing: 4,
+  //         ),
+  //       ),
+  //       const SizedBox(height: 4),
+  //       Text(
+  //         l10n.createAccount.toUpperCase(),
+  //         style: const TextStyle(
+  //           fontFamily: 'monospace',
+  //           fontWeight: FontWeight.w900,
+  //           fontSize: 24,
+  //           color: AppColors.magenta,
+  //           letterSpacing: 2,
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }

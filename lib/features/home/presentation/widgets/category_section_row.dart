@@ -26,15 +26,17 @@ class CategorySectionRow extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    if (selection.id.isEmpty)
+    if (selection.id.isEmpty) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
+    }
 
     final productsAsync = ref.watch(categoryProductsProvider(selection.id));
 
     return productsAsync.when(
       data: (products) {
-        if (products.isEmpty)
+        if (products.isEmpty) {
           return const SliverToBoxAdapter(child: SizedBox.shrink());
+        }
 
         return SliverMainAxisGroup(
           slivers: [

@@ -83,6 +83,9 @@ class AddressCard extends ConsumerWidget {
             FutureBuilder<List<Location>>(
               future: _geocodeAddress(address.fullAddress),
               builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return _buildMapLoading();
+                }
                 if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                   final loc = snapshot.data!.first;
                   return _buildMapWidget(LatLng(loc.latitude, loc.longitude));
@@ -91,6 +94,33 @@ class AddressCard extends ConsumerWidget {
               },
             ),
           _buildMapOverlay(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMapLoading() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            width: 24,
+            height: 24,
+            child: CircularProgressIndicator(
+              strokeWidth: 2,
+              color: AppColors.cyan,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            'LOCATING_TARGET...',
+            style: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 8,
+              color: AppColors.cyan.withValues(alpha: 0.5),
+            ),
+          ),
         ],
       ),
     );
@@ -105,9 +135,9 @@ class AddressCard extends ConsumerWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.black.withValues(alpha: 0.3),
+                Colors.black.withValues(alpha: 0.4),
                 Colors.transparent,
-                Colors.black.withValues(alpha: 0.2),
+                Colors.black.withValues(alpha: 0.3),
               ],
             ),
           ),
@@ -118,31 +148,73 @@ class AddressCard extends ConsumerWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 width: double.infinity,
                 color: AppColors.cyan.withValues(alpha: 0.1),
-                child: const Text(
-                  'TERRAIN_SCAN_ACTIVE',
-                  style: TextStyle(
-                    fontFamily: 'monospace',
-                    fontSize: 8,
-                    color: AppColors.cyan,
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(4),
-                    color: AppColors.cyan.withValues(alpha: 0.2),
-                    child: const Text(
-                      'GPS_LOCKED',
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'TARGET: ${address.street.toUpperCase()}',
+                        style: const TextStyle(
+                          fontFamily: 'monospace',
+                          fontSize: 8,
+                          color: AppColors.cyan,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      'SCAN_ACTIVE',
                       style: TextStyle(
                         fontFamily: 'monospace',
                         fontSize: 8,
                         color: AppColors.cyan,
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'AREA: ${address.city.toUpperCase()}',
+                          style: const TextStyle(
+                            fontFamily: 'monospace',
+                            fontSize: 7,
+                            color: AppColors.cyan,
+                          ),
+                        ),
+                        if (address.latitude != null)
+                          Text(
+                            'COORDS: ${address.latitude!.toStringAsFixed(4)}, ${address.longitude!.toStringAsFixed(4)}',
+                            style: const TextStyle(
+                              fontFamily: 'monospace',
+                              fontSize: 7,
+                              color: AppColors.cyan,
+                            ),
+                          ),
+                      ],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(4),
+                      color: AppColors.cyan.withValues(alpha: 0.2),
+                      child: const Text(
+                        'GPS_LOCKED',
+                        style: TextStyle(
+                          fontFamily: 'monospace',
+                          fontSize: 8,
+                          color: AppColors.cyan,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -205,10 +277,12 @@ class AddressCard extends ConsumerWidget {
   Widget _buildCardTopRow(BuildContext context) {
     final intl10n = AppLocalizations.of(context)!;
     IconData labelIcon = Icons.location_on_rounded;
-    if (address.label?.toLowerCase() == intl10n.home.toLowerCase())
+    if (address.label?.toLowerCase() == intl10n.home.toLowerCase()) {
       labelIcon = Icons.home_rounded;
-    if (address.label?.toLowerCase() == intl10n.work.toLowerCase())
+    }
+    if (address.label?.toLowerCase() == intl10n.work.toLowerCase()) {
       labelIcon = Icons.work_rounded;
+    }
 
     return Row(
       children: [

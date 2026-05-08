@@ -54,10 +54,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Stronger Muscles`
+  /// `Electronics Shop`
   String get appTitle {
     return Intl.message(
-      'Stronger Muscles',
+      'Electronics Shop',
       name: 'appTitle',
       desc: '',
       args: [],
@@ -84,9 +84,214 @@ class S {
     );
   }
 
+  /// `Sign in to Your Account`
+  String get signInToYourAccount {
+    return Intl.message(
+      'Sign in to Your Account',
+      name: 'signInToYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login / Register`
+  String get loginButtonLabel {
+    return Intl.message(
+      'Login / Register',
+      name: 'loginButtonLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track orders, manage addresses, and enjoy a personalized shopping experience`
+  String get loginMessage {
+    return Intl.message(
+      'Track orders, manage addresses, and enjoy a personalized shopping experience',
+      name: 'loginMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get email {
     return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Map unavailable`
+  String get mapUnavailable {
+    return Intl.message(
+      'Map unavailable',
+      name: 'mapUnavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set Default`
+  String get setDefault {
+    return Intl.message('Set Default', name: 'setDefault', desc: '', args: []);
+  }
+
+  /// `No results found`
+  String get noResultsFound {
+    return Intl.message(
+      'No results found',
+      name: 'noResultsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Work`
+  String get work {
+    return Intl.message('Work', name: 'work', desc: '', args: []);
+  }
+
+  /// `Country`
+  String get country {
+    return Intl.message('Country', name: 'country', desc: '', args: []);
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message('Update', name: 'update', desc: '', args: []);
+  }
+
+  /// `Postal Code`
+  String get postalCode {
+    return Intl.message('Postal Code', name: 'postalCode', desc: '', args: []);
+  }
+
+  /// `Total Spent`
+  String get totalSpent {
+    return Intl.message('Total Spent', name: 'totalSpent', desc: '', args: []);
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message('Completed', name: 'completed', desc: '', args: []);
+  }
+
+  /// `reviews`
+  String get reviews {
+    return Intl.message('reviews', name: 'reviews', desc: '', args: []);
+  }
+
+  /// `Read more`
+  String get readMore {
+    return Intl.message('Read more', name: 'readMore', desc: '', args: []);
+  }
+
+  /// `Read less`
+  String get readLess {
+    return Intl.message('Read less', name: 'readLess', desc: '', args: []);
+  }
+
+  /// `Search for products`
+  String get searchForProducts {
+    return Intl.message(
+      'Search for products',
+      name: 'searchForProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message('Other', name: 'other', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get thisFieldIsRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'thisFieldIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Address`
+  String get editAddress {
+    return Intl.message(
+      'Edit Address',
+      name: 'editAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address updated successfully`
+  String get addressUpdatedSuccessfully {
+    return Intl.message(
+      'Address updated successfully',
+      name: 'addressUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use Current Location`
+  String get useCurrentLocation {
+    return Intl.message(
+      'Use Current Location',
+      name: 'useCurrentLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street Address`
+  String get streetAddress {
+    return Intl.message(
+      'Street Address',
+      name: 'streetAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City`
+  String get city {
+    return Intl.message('City', name: 'city', desc: '', args: []);
+  }
+
+  /// `State`
+  String get state {
+    return Intl.message('State', name: 'state', desc: '', args: []);
+  }
+
+  /// `Saved Addresses`
+  String get savedAddresses {
+    return Intl.message(
+      'Saved Addresses',
+      name: 'savedAddresses',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Please enter your email`
@@ -319,89 +524,54 @@ class S {
     return Intl.message('Home', name: 'categoryHome', desc: '', args: []);
   }
 
-  /// `Protein`
-  String get categoryProtein {
-    return Intl.message('Protein', name: 'categoryProtein', desc: '', args: []);
+  /// `Phones`
+  String get categoryPhones {
+    return Intl.message('Phones', name: 'categoryPhones', desc: '', args: []);
   }
 
-  /// `Creatine`
-  String get categoryCreatine {
+  /// `Smart Watches`
+  String get categoryWatches {
     return Intl.message(
-      'Creatine',
-      name: 'categoryCreatine',
+      'Smart Watches',
+      name: 'categoryWatches',
       desc: '',
       args: [],
     );
   }
 
-  /// `Amino`
-  String get categoryAmino {
-    return Intl.message('Amino', name: 'categoryAmino', desc: '', args: []);
+  /// `Laptops`
+  String get categoryLaptops {
+    return Intl.message('Laptops', name: 'categoryLaptops', desc: '', args: []);
   }
 
-  /// `BCAA`
-  String get categoryBCAA {
-    return Intl.message('BCAA', name: 'categoryBCAA', desc: '', args: []);
+  /// `Audio`
+  String get categoryAudio {
+    return Intl.message('Audio', name: 'categoryAudio', desc: '', args: []);
   }
 
-  /// `Pre-workout`
-  String get categoryPreWorkout {
+  /// `Screens`
+  String get categoryScreens {
+    return Intl.message('Screens', name: 'categoryScreens', desc: '', args: []);
+  }
+
+  /// `Cameras`
+  String get categoryCameras {
+    return Intl.message('Cameras', name: 'categoryCameras', desc: '', args: []);
+  }
+
+  /// `Gaming`
+  String get categoryGaming {
+    return Intl.message('Gaming', name: 'categoryGaming', desc: '', args: []);
+  }
+
+  /// `Accessories`
+  String get categoryAccessories {
     return Intl.message(
-      'Pre-workout',
-      name: 'categoryPreWorkout',
+      'Accessories',
+      name: 'categoryAccessories',
       desc: '',
       args: [],
     );
-  }
-
-  /// `Mass Gainer`
-  String get categoryMassGainer {
-    return Intl.message(
-      'Mass Gainer',
-      name: 'categoryMassGainer',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Vitamins`
-  String get categoryVitamins {
-    return Intl.message(
-      'Vitamins',
-      name: 'categoryVitamins',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Recovery`
-  String get categoryRecovery {
-    return Intl.message(
-      'Recovery',
-      name: 'categoryRecovery',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Fat Burner`
-  String get categoryFatBurner {
-    return Intl.message(
-      'Fat Burner',
-      name: 'categoryFatBurner',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Health`
-  String get categoryHealth {
-    return Intl.message('Health', name: 'categoryHealth', desc: '', args: []);
-  }
-
-  /// `Carbs`
-  String get categoryCarb {
-    return Intl.message('Carbs', name: 'categoryCarb', desc: '', args: []);
   }
 
   /// `My Account`
@@ -704,11 +874,11 @@ class S {
     );
   }
 
-  /// `Select Flavor`
-  String get selectFlavor {
+  /// `Select Color`
+  String get selectColor {
     return Intl.message(
-      'Select Flavor',
-      name: 'selectFlavor',
+      'Select Color',
+      name: 'selectColor',
       desc: '',
       args: [],
     );
@@ -734,6 +904,16 @@ class S {
     );
   }
 
+  /// `CHOOSE YOUR COLOR`
+  String get chooseYourColor {
+    return Intl.message(
+      'CHOOSE YOUR COLOR',
+      name: 'chooseYourColor',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No images available`
   String get noImagesAvailable {
     return Intl.message(
@@ -754,16 +934,21 @@ class S {
     );
   }
 
-  /// `Warnings`
-  String get warnings {
-    return Intl.message('Warnings', name: 'warnings', desc: '', args: []);
+  /// `Warranty Info`
+  String get warrantyInfo {
+    return Intl.message(
+      'Warranty Info',
+      name: 'warrantyInfo',
+      desc: '',
+      args: [],
+    );
   }
 
-  /// `Usage Instructions`
-  String get usageInstructions {
+  /// `Technical Specifications`
+  String get technicalSpecifications {
     return Intl.message(
-      'Usage Instructions',
-      name: 'usageInstructions',
+      'Technical Specifications',
+      name: 'technicalSpecifications',
       desc: '',
       args: [],
     );
@@ -787,26 +972,6 @@ class S {
   /// `SKU`
   String get sku {
     return Intl.message('SKU', name: 'sku', desc: '', args: []);
-  }
-
-  /// `Serving Size`
-  String get servingSize {
-    return Intl.message(
-      'Serving Size',
-      name: 'servingSize',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Servings Per Container`
-  String get servingsPerContainer {
-    return Intl.message(
-      'Servings Per Container',
-      name: 'servingsPerContainer',
-      desc: '',
-      args: [],
-    );
   }
 
   /// `Weight`
@@ -854,11 +1019,6 @@ class S {
     return Intl.message('Featured', name: 'featured', desc: '', args: []);
   }
 
-  /// `Ingredients`
-  String get ingredients {
-    return Intl.message('Ingredients', name: 'ingredients', desc: '', args: []);
-  }
-
   /// `Added to Cart`
   String get addedToCart {
     return Intl.message(
@@ -889,9 +1049,149 @@ class S {
     );
   }
 
-  /// `Flavor`
-  String get flavor {
-    return Intl.message('Flavor', name: 'flavor', desc: '', args: []);
+  /// `Color`
+  String get color {
+    return Intl.message('Color', name: 'color', desc: '', args: []);
+  }
+
+  /// `Contact Us`
+  String get contactUs {
+    return Intl.message('Contact Us', name: 'contactUs', desc: '', args: []);
+  }
+
+  /// `Price on Request`
+  String get priceOnRequest {
+    return Intl.message(
+      'Price on Request',
+      name: 'priceOnRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category`
+  String get category {
+    return Intl.message('Category', name: 'category', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get cartTitle {
+    return Intl.message('Cart', name: 'cartTitle', desc: '', args: []);
+  }
+
+  /// `How can we help?`
+  String get howCanWeHelp {
+    return Intl.message(
+      'How can we help?',
+      name: 'howCanWeHelp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Frequently Asked Questions`
+  String get frequentlyAskedQuestions {
+    return Intl.message(
+      'Frequently Asked Questions',
+      name: 'frequentlyAskedQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular Topics`
+  String get popularTopics {
+    return Intl.message(
+      'Popular Topics',
+      name: 'popularTopics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Support`
+  String get contactSupport {
+    return Intl.message(
+      'Contact Support',
+      name: 'contactSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Live Chat`
+  String get liveChat {
+    return Intl.message('Live Chat', name: 'liveChat', desc: '', args: []);
+  }
+
+  /// `Send Email`
+  String get sendEmail {
+    return Intl.message('Send Email', name: 'sendEmail', desc: '', args: []);
+  }
+
+  /// `Call Us`
+  String get callUs {
+    return Intl.message('Call Us', name: 'callUs', desc: '', args: []);
+  }
+
+  /// `My Tickets`
+  String get myTickets {
+    return Intl.message('My Tickets', name: 'myTickets', desc: '', args: []);
+  }
+
+  /// `Shipping & Returns`
+  String get shippingReturns {
+    return Intl.message(
+      'Shipping & Returns',
+      name: 'shippingReturns',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payments & Billing`
+  String get paymentsBilling {
+    return Intl.message(
+      'Payments & Billing',
+      name: 'paymentsBilling',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Status`
+  String get orderStatus {
+    return Intl.message(
+      'Order Status',
+      name: 'orderStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account & Security`
+  String get accountSecurity {
+    return Intl.message(
+      'Account & Security',
+      name: 'accountSecurity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View All FAQ`
+  String get viewAllFAQ {
+    return Intl.message('View All FAQ', name: 'viewAllFAQ', desc: '', args: []);
+  }
+
+  /// `Search for help...`
+  String get searchHelp {
+    return Intl.message(
+      'Search for help...',
+      name: 'searchHelp',
+      desc: '',
+      args: [],
+    );
   }
 }
 

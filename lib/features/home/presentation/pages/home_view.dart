@@ -8,8 +8,6 @@ import 'package:electronics_shop/features/home/presentation/controllers/categori
 import 'package:electronics_shop/features/search/presentation/widgets/search_bar.dart';
 import 'package:electronics_shop/features/home/presentation/widgets/shortcuts_row.dart';
 import 'package:electronics_shop/features/promo/presentation/widgets/promo_banner.dart';
-// import 'package:electronics_shop/features/search/presentation/widgets/section_title.dart';
-// import 'package:electronics_shop/features/home/presentation/widgets/product_row_list.dart';
 import 'package:electronics_shop/features/home/presentation/widgets/category_section_row.dart';
 import 'package:electronics_shop/features/home/presentation/widgets/product_grid_list.dart';
 
@@ -41,7 +39,7 @@ class HomeView extends ConsumerWidget {
                   parent: AlwaysScrollableScrollPhysics(),
                 ),
                 slivers: [
-                  const SearchBar(),
+                  const MySearchBar(),
                   const SliverToBoxAdapter(child: CategoriesShortcutsRow()),
                   if (selectedCategoryIndex == 0) ...[
                     const SliverToBoxAdapter(child: PromoBanner()),
@@ -70,10 +68,11 @@ class HomeView extends ConsumerWidget {
                       data: (selections) {
                         return SliverMainAxisGroup(
                           slivers: selections.asMap().entries.map((entry) {
-                            if (entry.key == 0)
+                            if (entry.key == 0) {
                               return const SliverToBoxAdapter(
                                 child: SizedBox.shrink(),
                               ); // Skip "All"
+                            }
                             return CategorySectionRow(
                               selection: entry.value,
                               index: entry.key,

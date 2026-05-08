@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "about": MessageLookupByLibrary.simpleMessage("About"),
+    "accountSecurity": MessageLookupByLibrary.simpleMessage(
+      "Account & Security",
+    ),
     "accountSettings": MessageLookupByLibrary.simpleMessage("Settings"),
     "addNew": MessageLookupByLibrary.simpleMessage("Add New"),
     "addNewAddress": MessageLookupByLibrary.simpleMessage("Add New Address"),
@@ -32,10 +35,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "addToCart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
     "addedToCart": MessageLookupByLibrary.simpleMessage("Added to Cart"),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
+    "addressUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Address updated successfully",
+    ),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Stronger Muscles"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Electronics Shop"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "beTheFirstToReviewThisProduct": MessageLookupByLibrary.simpleMessage(
@@ -43,27 +49,36 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
     "brand": MessageLookupByLibrary.simpleMessage("Brand"),
+    "callUs": MessageLookupByLibrary.simpleMessage("Call Us"),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
-    "categoryAmino": MessageLookupByLibrary.simpleMessage("Amino"),
-    "categoryBCAA": MessageLookupByLibrary.simpleMessage("BCAA"),
-    "categoryCarb": MessageLookupByLibrary.simpleMessage("Carbs"),
-    "categoryCreatine": MessageLookupByLibrary.simpleMessage("Creatine"),
-    "categoryFatBurner": MessageLookupByLibrary.simpleMessage("Fat Burner"),
-    "categoryHealth": MessageLookupByLibrary.simpleMessage("Health"),
+    "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
+    "category": MessageLookupByLibrary.simpleMessage("Category"),
+    "categoryAccessories": MessageLookupByLibrary.simpleMessage("Accessories"),
+    "categoryAudio": MessageLookupByLibrary.simpleMessage("Audio"),
+    "categoryCameras": MessageLookupByLibrary.simpleMessage("Cameras"),
+    "categoryGaming": MessageLookupByLibrary.simpleMessage("Gaming"),
     "categoryHome": MessageLookupByLibrary.simpleMessage("Home"),
-    "categoryMassGainer": MessageLookupByLibrary.simpleMessage("Mass Gainer"),
-    "categoryPreWorkout": MessageLookupByLibrary.simpleMessage("Pre-workout"),
-    "categoryProtein": MessageLookupByLibrary.simpleMessage("Protein"),
-    "categoryRecovery": MessageLookupByLibrary.simpleMessage("Recovery"),
-    "categoryVitamins": MessageLookupByLibrary.simpleMessage("Vitamins"),
+    "categoryLaptops": MessageLookupByLibrary.simpleMessage("Laptops"),
+    "categoryPhones": MessageLookupByLibrary.simpleMessage("Phones"),
+    "categoryScreens": MessageLookupByLibrary.simpleMessage("Screens"),
+    "categoryWatches": MessageLookupByLibrary.simpleMessage("Smart Watches"),
     "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+    "chooseYourColor": MessageLookupByLibrary.simpleMessage(
+      "CHOOSE YOUR COLOR",
+    ),
+    "city": MessageLookupByLibrary.simpleMessage("City"),
+    "color": MessageLookupByLibrary.simpleMessage("Color"),
+    "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "confirmYourPassword": MessageLookupByLibrary.simpleMessage(
       "Please confirm your password",
     ),
+    "contactSupport": MessageLookupByLibrary.simpleMessage("Contact Support"),
+    "contactUs": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "continueShopping": MessageLookupByLibrary.simpleMessage(
       "Continue Shopping",
     ),
+    "country": MessageLookupByLibrary.simpleMessage("Country"),
     "countryOfOrigin": MessageLookupByLibrary.simpleMessage(
       "Country of Origin",
     ),
@@ -75,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "editAddress": MessageLookupByLibrary.simpleMessage("Edit Address"),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "english": MessageLookupByLibrary.simpleMessage("English"),
@@ -90,26 +106,38 @@ class MessageLookup extends MessageLookupByLibrary {
     "featured": MessageLookupByLibrary.simpleMessage("Featured"),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "filterProducts": MessageLookupByLibrary.simpleMessage("Filter products"),
-    "flavor": MessageLookupByLibrary.simpleMessage("Flavor"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "forgotPasswordNotImplemented": MessageLookupByLibrary.simpleMessage(
       "Forgot password not implemented yet",
+    ),
+    "frequentlyAskedQuestions": MessageLookupByLibrary.simpleMessage(
+      "Frequently Asked Questions",
     ),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "getDiscount": MessageLookupByLibrary.simpleMessage(
       "Get 20% off on all products",
     ),
     "helpSupport": MessageLookupByLibrary.simpleMessage("Help & Support"),
-    "ingredients": MessageLookupByLibrary.simpleMessage("Ingredients"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "howCanWeHelp": MessageLookupByLibrary.simpleMessage("How can we help?"),
     "item": MessageLookupByLibrary.simpleMessage("item"),
     "items": MessageLookupByLibrary.simpleMessage("items"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "liveChat": MessageLookupByLibrary.simpleMessage("Live Chat"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginButtonLabel": MessageLookupByLibrary.simpleMessage(
+      "Login / Register",
+    ),
+    "loginMessage": MessageLookupByLibrary.simpleMessage(
+      "Track orders, manage addresses, and enjoy a personalized shopping experience",
+    ),
     "manufacturer": MessageLookupByLibrary.simpleMessage("Manufacturer"),
+    "mapUnavailable": MessageLookupByLibrary.simpleMessage("Map unavailable"),
     "mostPopularOffers": MessageLookupByLibrary.simpleMessage(
       "Most Popular Offers",
     ),
     "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
+    "myTickets": MessageLookupByLibrary.simpleMessage("My Tickets"),
     "newArrival": MessageLookupByLibrary.simpleMessage("New Arrival"),
     "noAddressesFound": MessageLookupByLibrary.simpleMessage(
       "No addresses found. Please add one in your profile.",
@@ -120,9 +148,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "noProductsFound": MessageLookupByLibrary.simpleMessage(
       "No products found.",
     ),
+    "noResultsFound": MessageLookupByLibrary.simpleMessage("No results found"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "or": MessageLookupByLibrary.simpleMessage("OR"),
+    "orderStatus": MessageLookupByLibrary.simpleMessage("Order Status"),
     "orderSummary": MessageLookupByLibrary.simpleMessage("Order Summary"),
+    "other": MessageLookupByLibrary.simpleMessage("Other"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordLength": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 6 characters",
@@ -132,6 +163,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method:"),
+    "paymentsBilling": MessageLookupByLibrary.simpleMessage(
+      "Payments & Billing",
+    ),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "popularTopics": MessageLookupByLibrary.simpleMessage("Popular Topics"),
+    "postalCode": MessageLookupByLibrary.simpleMessage("Postal Code"),
+    "priceOnRequest": MessageLookupByLibrary.simpleMessage("Price on Request"),
     "proceedToCheckout": MessageLookupByLibrary.simpleMessage(
       "Proceed to checkout",
     ),
@@ -140,21 +178,34 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "productImage": MessageLookupByLibrary.simpleMessage("Product Image"),
     "productInfo": MessageLookupByLibrary.simpleMessage("Product Info"),
+    "readLess": MessageLookupByLibrary.simpleMessage("Read less"),
+    "readMore": MessageLookupByLibrary.simpleMessage("Read more"),
     "removeFromCart": MessageLookupByLibrary.simpleMessage("Remove from Cart"),
     "review": MessageLookupByLibrary.simpleMessage("Review"),
+    "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "savedAddresses": MessageLookupByLibrary.simpleMessage("Saved Addresses"),
+    "searchForProducts": MessageLookupByLibrary.simpleMessage(
+      "Search for products",
+    ),
+    "searchHelp": MessageLookupByLibrary.simpleMessage("Search for help..."),
     "searchProducts": MessageLookupByLibrary.simpleMessage(
       "Search products...",
     ),
     "seeAll": MessageLookupByLibrary.simpleMessage("See all"),
-    "selectFlavor": MessageLookupByLibrary.simpleMessage("Select Flavor"),
-    "servingSize": MessageLookupByLibrary.simpleMessage("Serving Size"),
-    "servingsPerContainer": MessageLookupByLibrary.simpleMessage(
-      "Servings Per Container",
+    "selectColor": MessageLookupByLibrary.simpleMessage("Select Color"),
+    "sendEmail": MessageLookupByLibrary.simpleMessage("Send Email"),
+    "setDefault": MessageLookupByLibrary.simpleMessage("Set Default"),
+    "shippingReturns": MessageLookupByLibrary.simpleMessage(
+      "Shipping & Returns",
     ),
     "shippingTo": MessageLookupByLibrary.simpleMessage("Shipping To:"),
     "shopNow": MessageLookupByLibrary.simpleMessage("Shop Now"),
     "signInToContinue": MessageLookupByLibrary.simpleMessage(
       "Sign in to continue",
+    ),
+    "signInToYourAccount": MessageLookupByLibrary.simpleMessage(
+      "Sign in to Your Account",
     ),
     "signInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Sign in with Google",
@@ -171,20 +222,32 @@ class MessageLookup extends MessageLookupByLibrary {
       "Start adding your favorite products!",
     ),
     "startShopping": MessageLookupByLibrary.simpleMessage("Start Shopping"),
+    "state": MessageLookupByLibrary.simpleMessage("State"),
+    "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
+    "technicalSpecifications": MessageLookupByLibrary.simpleMessage(
+      "Technical Specifications",
+    ),
     "theme": MessageLookupByLibrary.simpleMessage("Theme"),
+    "thisFieldIsRequired": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "total": MessageLookupByLibrary.simpleMessage("Total"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("Total Amount"),
-    "usageInstructions": MessageLookupByLibrary.simpleMessage(
-      "Usage Instructions",
+    "totalSpent": MessageLookupByLibrary.simpleMessage("Total Spent"),
+    "update": MessageLookupByLibrary.simpleMessage("Update"),
+    "useCurrentLocation": MessageLookupByLibrary.simpleMessage(
+      "Use Current Location",
     ),
     "validEmail": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email",
     ),
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
-    "warnings": MessageLookupByLibrary.simpleMessage("Warnings"),
+    "viewAllFAQ": MessageLookupByLibrary.simpleMessage("View All FAQ"),
+    "warrantyInfo": MessageLookupByLibrary.simpleMessage("Warranty Info"),
     "weight": MessageLookupByLibrary.simpleMessage("Weight"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
     "wishlist": MessageLookupByLibrary.simpleMessage("Wishlist"),
+    "work": MessageLookupByLibrary.simpleMessage("Work"),
     "yourCartIsEmpty": MessageLookupByLibrary.simpleMessage(
       "Your cart is empty",
     ),

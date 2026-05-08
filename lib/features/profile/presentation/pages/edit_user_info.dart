@@ -104,8 +104,9 @@ class _EditUserInfoViewState extends ConsumerState<EditUserInfoView> {
                             hint: localizations.fullName,
                             icon: Icons.person_search_rounded,
                             validator: (value) {
-                              if (value == null || value.isEmpty)
+                              if (value == null || value.isEmpty) {
                                 return localizations.enterName;
+                              }
                               return null;
                             },
                           ),
@@ -117,12 +118,14 @@ class _EditUserInfoViewState extends ConsumerState<EditUserInfoView> {
                             icon: Icons.alternate_email_rounded,
                             keyboardType: TextInputType.emailAddress,
                             validator: (value) {
-                              if (value == null || value.isEmpty)
+                              if (value == null || value.isEmpty) {
                                 return localizations.enterEmail;
+                              }
                               if (!RegExp(
                                 r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-                              ).hasMatch(value))
+                              ).hasMatch(value)) {
                                 return localizations.validEmail;
+                              }
                               return null;
                             },
                           ),
@@ -136,8 +139,9 @@ class _EditUserInfoViewState extends ConsumerState<EditUserInfoView> {
                             validator: (value) {
                               if (value != null &&
                                   value.isNotEmpty &&
-                                  value.length < 10)
+                                  value.length < 10) {
                                 return 'INVALID_NUM_FORMAT';
+                              }
                               return null;
                             },
                           ),

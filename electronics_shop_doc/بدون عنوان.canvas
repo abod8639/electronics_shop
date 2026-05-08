@@ -1,6 +1,5 @@
 {
 	"nodes":[
-		{"id":"f753125f8dd15739","type":"file","file":"Screenshot_1776640824.png","x":-880,"y":179,"width":433,"height":972},
 		{"id":"511f2762b3624381","type":"file","file":"Screenshot_1776640816.png","x":-348,"y":179,"width":433,"height":972},
 		{"id":"c7e0ec8bc21c5d98","type":"file","file":"Screenshot_1776642363.png","x":740,"y":179,"width":433,"height":972},
 		{"id":"849df61a03658e44","type":"file","file":"Screenshot_1776642341.png","x":180,"y":179,"width":433,"height":972},
@@ -8,14 +7,15 @@
 		{"id":"29d0f5d893dedd88","type":"file","file":"Screenshot_1776642426.png","x":1731,"y":179,"width":433,"height":972},
 		{"id":"ef4b4a7486e8ceca","type":"file","file":"Screenshot_1776642531.png","x":2264,"y":179,"width":433,"height":972},
 		{"id":"bcac23cf79f2ebe0","type":"file","file":"Screenshot_1776645804.png","x":2784,"y":179,"width":433,"height":972},
-		{"id":"7d38eb4c202bde86","type":"file","file":"Screenshot_1776640829.png","x":-880,"y":-1000,"width":433,"height":972},
 		{"id":"50937b8dd607b102","type":"file","file":"Screenshot_1776643983.png","x":2264,"y":-1000,"width":433,"height":972},
 		{"id":"489798e584f0a15f","type":"file","file":"Screenshot_1776642147.png","x":-36,"y":-1000,"width":433,"height":972},
 		{"id":"2702d44b831f4f94","type":"file","file":"Screenshot_1776642154.png","x":397,"y":-1000,"width":433,"height":972},
 		{"id":"13d882e74a490a8e","type":"file","file":"Screenshot_1776645436.png","x":830,"y":-1000,"width":433,"height":972},
 		{"id":"749e441fffd26a91","type":"file","file":"Screenshot_1776642190.png","x":1263,"y":-1000,"width":433,"height":972},
 		{"id":"439f168fc5fa94b0","type":"file","file":"Screenshot_1776642185.png","x":1695,"y":-1000,"width":433,"height":972},
-		{"id":"fb6eb2113a2a3dd4","type":"file","file":"Screenshot_1776644027.png","x":2784,"y":-1000,"width":433,"height":972}
+		{"id":"fb6eb2113a2a3dd4","type":"file","file":"Screenshot_1776644027.png","x":2784,"y":-1000,"width":433,"height":972},
+		{"id":"f753125f8dd15739","type":"file","file":"Screenshot_1776640824.png","x":-860,"y":179,"width":433,"height":972},
+		{"id":"7d38eb4c202bde86","type":"file","file":"Screenshot_1776640829.png","x":-860,"y":-1000,"width":433,"height":972}
 	],
 	"edges":[
 		{"id":"aef516dca9822f6b","fromNode":"f753125f8dd15739","fromSide":"top","toNode":"7d38eb4c202bde86","toSide":"bottom","color":"5"},

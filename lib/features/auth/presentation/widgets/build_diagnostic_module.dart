@@ -32,3 +32,34 @@ Widget buildDiagnosticModule(AppLocalizations l10n) {
       ],
     );
   }
+
+    // Widget buildDiagnosticModule(AppLocalizations l10n) {
+  //   return Row(
+  //     children: [
+  //       Container(width: 4, height: 20, color: AppColors.cyan),
+  //       const SizedBox(width: 12),
+  //       Column(
+  //         crossAxisAlignment: CrossAxisAlignment.start,
+  //         children: [
+  //           Text(
+  //             "IDENTITY_REGISTRATION_SYSTEM",
+  //             style: TextStyle(
+  //               fontFamily: 'monospace',
+  //               fontSize: 10,
+  //               color: AppColors.cyan.withValues(alpha: 0.8),
+  //               fontWeight: FontWeight.bold,
+  //             ),
+  //           ),
+  //           Text(
+  //             "STATUS: [NEW_ENTRY_PENDING]",
+  //             style: TextStyle(
+  //               fontFamily: 'monospace',
+  //               fontSize: 8,
+  //               color: AppColors.cyan.withValues(alpha: 0.5),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ],
+  //   );
+  // }
