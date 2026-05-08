@@ -248,7 +248,7 @@ class _OrderSuccessViewState extends State<OrderSuccessView>
                 fontFamily: 'monospace',
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2,
-                color: Colors.white,
+                color: AppColors.magenta,
               ),
             ),
           ),

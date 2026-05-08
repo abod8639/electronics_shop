@@ -3,7 +3,7 @@ import 'package:electronics_shop/core/utils/components/base_app_bar.dart';
 import 'package:electronics_shop/core/utils/components/cyberpunk_clippers.dart';
 import 'package:electronics_shop/features/checkout/presentation/widgets/build_address_step.dart';
 import 'package:electronics_shop/features/checkout/presentation/widgets/build_payment_step.dart';
-import 'package:electronics_shop/features/checkout/presentation/widgets/build_review_rtep.dart';
+import 'package:electronics_shop/features/checkout/presentation/widgets/build_review_step.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:electronics_shop/core/constants/app_colors.dart';
@@ -55,58 +55,63 @@ class CheckoutView extends ConsumerWidget {
                     ],
                   ),
                 )
-              : Theme(
-                  data: theme.copyWith(
-                    colorScheme: theme.colorScheme.copyWith(
-                      primary: AppColors.cyan,
-                      secondary: AppColors.magenta,
-                    ),
-                    canvasColor: Colors.transparent,
-                  ),
-                  child: Stepper(
-                    elevation: 0,
-                    type: StepperType.horizontal,
-                    currentStep: checkoutState.currentStep,
-                    onStepContinue: () {
-                      AppGuard.runSafe(ref, () async {
-                        if (checkoutState.currentStep == 2) {
-                          await checkoutNotifier.placeOrder(context);
-                        } else {
-                          checkoutNotifier.nextStep();
-                        }
-                      });
-                    },
-                    onStepCancel: checkoutNotifier.previousStep,
-                    controlsBuilder: (context, details) {
-                      return Padding(
-                        padding: const EdgeInsets.only(top: _controlsPadding),
-                        child: Row(
-                          children: [
-                            if (checkoutState.currentStep > 0) ...[
-                              checkoutActionButton(
-                                label: _backButtonText,
-                                isPrimary: false,
-                                onTap: details.onStepCancel,
-                              ),
-                              const SizedBox(width: _controlsSpacing),
-                            ],
-                            checkoutActionButton(
-                              label: checkoutState.currentStep == 2
-                                  ? _placeOrderButtonText
-                                  : _nextButtonText,
-                              isPrimary: true,
-                              onTap: details.onStepContinue,
-                            ),
-                          ],
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isMobile = constraints.maxWidth < 600;
+                    return Theme(
+                      data: theme.copyWith(
+                        colorScheme: theme.colorScheme.copyWith(
+                          primary: AppColors.cyan,
+                          secondary: AppColors.magenta,
                         ),
-                      );
-                    },
-                    steps: [
-                      buildAddressStep(ref, 'ADDRESS_ID'),
-                      buildPaymentStep(ref, 'CREDIT_LINK'),
-                      buildReviewStep(ref, 'SUMMARY'),
-                    ],
-                  ),
+                        canvasColor: Colors.transparent,
+                      ),
+                      child: Stepper(
+                        elevation: 0,
+                        type: isMobile ? StepperType.vertical : StepperType.horizontal,
+                        currentStep: checkoutState.currentStep,
+                        onStepContinue: () {
+                          AppGuard.runSafe(ref, () async {
+                            if (checkoutState.currentStep == 2) {
+                              await checkoutNotifier.placeOrder(context);
+                            } else {
+                              checkoutNotifier.nextStep();
+                            }
+                          });
+                        },
+                        onStepCancel: checkoutNotifier.previousStep,
+                        controlsBuilder: (context, details) {
+                          return Padding(
+                            padding: const EdgeInsets.only(top: _controlsPadding),
+                            child: Row(
+                              children: [
+                                if (checkoutState.currentStep > 0) ...[
+                                  checkoutActionButton(
+                                    label: _backButtonText,
+                                    isPrimary: false,
+                                    onTap: details.onStepCancel,
+                                  ),
+                                  const SizedBox(width: _controlsSpacing),
+                                ],
+                                checkoutActionButton(
+                                  label: checkoutState.currentStep == 2
+                                      ? _placeOrderButtonText
+                                      : _nextButtonText,
+                                  isPrimary: true,
+                                  onTap: details.onStepContinue,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        steps: [
+                          buildAddressStep(ref, 'ADDR_ID'),
+                          buildPaymentStep(ref, 'PAY_LINK'),
+                          buildReviewStep(ref, 'REVIEW'),
+                        ],
+                      ),
+                    );
+                  },
                 ),
         ],
       ),

@@ -25,9 +25,9 @@ class PromoBanner extends ConsumerWidget {
             SizedBox(
               height: 200,
               child: PageView.builder(
-                allowImplicitScrolling: true,
                 pageSnapping: true,
                 controller: promoNotifier.pageController,
+                itemCount: 20000, // High number for pseudo-infinite scrolling
                 onPageChanged: (index) =>
                     promoNotifier.updateCurrentIndex(index, promos.length),
                 itemBuilder: (context, index) {
