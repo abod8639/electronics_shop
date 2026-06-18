@@ -4,6 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:electronics_shop/features/product/data/models/product_model.dart';
 import 'package:electronics_shop/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:electronics_shop/features/cart/data/models/cart_item_model.dart';
+import 'package:electronics_shop/core/services/analytics_service.dart';
 
 part 'cart_controller.g.dart';
 
@@ -61,6 +62,14 @@ class CartController extends _$CartController {
       );
       await _cartBox.add(newItem);
     }
+
+    ref.read(analyticsServiceProvider).logAddToCart(
+          itemId: product.id,
+          itemName: product.name?.en ?? product.name?.ar ?? '',
+          itemCategory: product.category?.name?.en ?? product.category?.name?.ar ?? 'electronics',
+          price: product.getEffectivePriceForSize(selectedSize),
+          quantity: 1,
+        );
 
     state = AsyncData(_cartBox.values.toList());
   }
