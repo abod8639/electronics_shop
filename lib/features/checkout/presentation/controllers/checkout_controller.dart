@@ -5,6 +5,8 @@ import 'package:electronics_shop/features/cart/presentation/controllers/cart_con
 import 'package:electronics_shop/features/profile/data/models/address_model.dart';
 import 'package:electronics_shop/features/profile/presentation/controllers/profile_controller.dart';
 import 'package:electronics_shop/routes/routes.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:electronics_shop/core/services/analytics_service.dart';
 
 part 'checkout_controller.g.dart';
 
@@ -50,6 +52,23 @@ class CheckoutController extends _$CheckoutController {
           addresses.where((addr) => addr.isDefault).firstOrNull ??
           addresses.first;
     }
+
+    Future.microtask(() {
+      final cart = ref.read(cartControllerProvider.notifier);
+      final items = cart.cartItems.map((item) {
+        return AnalyticsEventItem(
+          itemId: item.product.id,
+          itemName: item.product.name?.en ?? item.product.name?.ar ?? '',
+          itemCategory: item.product.category?.name?.en ?? item.product.category?.name?.ar ?? 'electronics',
+          price: item.product.getEffectivePriceForSize(item.selectedSize),
+          quantity: item.quantity,
+        );
+      }).toList();
+      ref.read(analyticsServiceProvider).logBeginCheckout(
+            value: cart.totalPrice,
+            items: items,
+          );
+    });
 
     return CheckoutState(selectedAddress: initialAddress);
   }
@@ -103,6 +122,24 @@ class CheckoutController extends _$CheckoutController {
       };
 
       await orderRepository.createOrder(payload);
+
+      // Log purchase event in analytics
+      final transactionId = DateTime.now().millisecondsSinceEpoch.toString();
+      final items = cartNotifier.cartItems.map((item) {
+        return AnalyticsEventItem(
+          itemId: item.product.id,
+          itemName: item.product.name?.en ?? item.product.name?.ar ?? '',
+          itemCategory: item.product.category?.name?.en ?? item.product.category?.name?.ar ?? 'electronics',
+          price: item.product.getEffectivePriceForSize(item.selectedSize),
+          quantity: item.quantity,
+        );
+      }).toList();
+      await ref.read(analyticsServiceProvider).logPurchase(
+            transactionId: transactionId,
+            value: cartNotifier.totalPrice,
+            items: items,
+          );
+
       await cartNotifier.clearCart();
       ref.read(routerProvider).go(AppRoutes.orderSuccess);
     } catch (e) {
