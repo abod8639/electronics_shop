@@ -2,6 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:electronics_shop/core/services/wishlist_service.dart';
 import 'package:electronics_shop/features/product/data/models/product_model.dart';
 import 'package:electronics_shop/features/product/data/models/product_size_model.dart';
+import 'package:electronics_shop/core/services/analytics_service.dart';
 
 part 'product_details_controller.g.dart';
 
@@ -58,6 +59,15 @@ class ProductDetailsController extends _$ProductDetailsController {
       }
     }
 
+    Future.microtask(() {
+      ref.read(analyticsServiceProvider).logViewProduct(
+            itemId: product.id,
+            itemName: product.name?.en ?? product.name?.ar ?? '',
+            itemCategory: product.category?.name?.en ?? product.category?.name?.ar ?? 'electronics',
+            price: product.getEffectivePriceForSize(sizeObj?.size),
+          );
+    });
+
     return ProductDetailsState(
       selectedColor: color,
       selectedSizeObject: sizeObj,
@@ -72,9 +82,20 @@ class ProductDetailsController extends _$ProductDetailsController {
   void toggleWishlist(ProductModel product) {
     final wishlistService = ref.read(wishlistServiceProvider.notifier);
     wishlistService.toggleFavorite(product);
+    final isFavorite = wishlistService.isFavorite(product.id);
+    
     state = state.copyWith(
-      isInWishlist: wishlistService.isFavorite(product.id),
+      isInWishlist: isFavorite,
     );
+
+    if (isFavorite) {
+      ref.read(analyticsServiceProvider).logAddToWishlist(
+            itemId: product.id,
+            itemName: product.name?.en ?? product.name?.ar ?? '',
+            itemCategory: product.category?.name?.en ?? product.category?.name?.ar ?? 'electronics',
+            price: product.getEffectivePriceForSize(state.selectedSizeObject?.size),
+          );
+    }
   }
 
   void updateColor(String color) {
