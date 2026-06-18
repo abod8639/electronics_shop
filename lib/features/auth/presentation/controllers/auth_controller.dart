@@ -1,6 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:electronics_shop/features/auth/domain/usecases/usecase_providers.dart';
 import 'package:electronics_shop/features/profile/data/models/user_model.dart';
+import 'package:electronics_shop/core/services/analytics_service.dart';
 
 part 'auth_controller.g.dart';
 
@@ -23,7 +24,12 @@ class AuthController extends _$AuthController {
     state = const AsyncLoading();
     state = await AsyncValue.guard(() async {
       final login = ref.read(loginUseCaseProvider);
-      return await login(email: email, password: password);
+      final user = await login(email: email, password: password);
+      if (user != null) {
+        ref.read(analyticsServiceProvider).logLogin(method: 'email');
+        ref.read(analyticsServiceProvider).setUserId(user.id.toString());
+      }
+      return user;
     });
   }
 
@@ -35,7 +41,12 @@ class AuthController extends _$AuthController {
     state = const AsyncLoading();
     state = await AsyncValue.guard(() async {
       final register = ref.read(registerUseCaseProvider);
-      return await register(email: email, password: password, name: name ?? "");
+      final user = await register(email: email, password: password, name: name ?? "");
+      if (user != null) {
+        ref.read(analyticsServiceProvider).logSignUp(method: 'email');
+        ref.read(analyticsServiceProvider).setUserId(user.id.toString());
+      }
+      return user;
     });
   }
 
@@ -48,6 +59,7 @@ class AuthController extends _$AuthController {
     state = await AsyncValue.guard(() async {
       final logout = ref.read(logoutUseCaseProvider);
       await logout();
+      ref.read(analyticsServiceProvider).setUserId(null);
       return null;
     });
   }
