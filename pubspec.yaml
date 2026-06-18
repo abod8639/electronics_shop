@@ -15,6 +15,7 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   firebase_core: ^4.2.0
+  firebase_analytics: ^12.4.3
   cached_network_image: ^3.4.1
   hive: ^2.2.3
   firebase_auth: ^6.1.1
@@ -31,7 +32,7 @@ dependencies:
   flutter_dotenv: ^6.0.0
   freezed_annotation: ^2.4.1
   json_annotation: ^4.9.0
-  internet_connection_checker_plus: ^2.9.1+2
+  internet_connection_checker_plus: ^3.1.0
   geolocator: ^14.0.2
   geocoding: ^4.0.0
   flutter_markdown: ^0.7.7+1
