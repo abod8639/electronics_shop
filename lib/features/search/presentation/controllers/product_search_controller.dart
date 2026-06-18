@@ -8,6 +8,7 @@ import 'package:fuzzy/fuzzy.dart';
 import 'package:electronics_shop/features/home/presentation/controllers/home_controller.dart';
 import 'package:electronics_shop/features/product/data/repositories/product_repository.dart';
 import 'package:electronics_shop/features/profile/presentation/controllers/language_controller.dart';
+import 'package:electronics_shop/core/services/analytics_service.dart';
 
 part 'product_search_controller.g.dart';
 
@@ -92,6 +93,9 @@ class ProductSearchController extends _$ProductSearchController {
     // 2. Debounce remote search — this is the authoritative source
     _debounceTimer?.cancel();
     _debounceTimer = Timer(const Duration(milliseconds: 400), () {
+      if (_searchQuery.isNotEmpty) {
+        ref.read(analyticsServiceProvider).logSearch(query: _searchQuery);
+      }
       _handleRemoteSearch(_searchQuery);
     });
   }
