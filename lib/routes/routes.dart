@@ -24,6 +24,7 @@ import 'package:electronics_shop/features/product/data/models/product_model.dart
 import 'package:electronics_shop/features/splash/presentation/pages/splash_view.dart';
 import 'package:electronics_shop/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:electronics_shop/features/product/data/repositories/product_repository.dart';
+import 'package:electronics_shop/core/services/analytics_service.dart';
 
 class AppRoutes {
   static const String main = '/';
@@ -47,9 +48,12 @@ class AppRoutes {
 }
 
 final routerProvider = Provider<GoRouter>((ref) {
+  final analyticsService = ref.read(analyticsServiceProvider);
+
   return GoRouter(
     initialLocation: AppRoutes.splash,
     refreshListenable: AuthRefreshListenable(ref),
+    observers: [analyticsService.observer],
     redirect: (context, state) {
       final authState = ref.read(authControllerProvider);
       final isLoggedIn = authState.value != null;
