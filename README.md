@@ -2,6 +2,11 @@
 
 A premium e-commerce mobile application built with Flutter, designed using high-performance components and a technical, data-driven design system. The application connects to a Firebase backend for authentication and database management, with local caching for the shopping cart and user settings.
 
+## Demo
+
+![Demo](assets/image/Screenshot_1781892389.png)
+
+
 ## Architecture
 
 This project is structured according to the principles of Clean Architecture combined with a feature-first approach. By segregating code into distinct layers, the application ensures high scalability, separation of concerns, testability, and decoupling from external framework dependencies.
@@ -84,7 +89,7 @@ The application utilizes a robust set of packages to handle state management, lo
 
 1.  Clone the repository and navigate to the project directory:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/abod8639/electronics_shop.git
     cd electronics_shop
     ```
 
